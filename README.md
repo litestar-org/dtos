@@ -14,11 +14,11 @@ Model your domain at the edge.
 </div>
 
 > **Warning**: Pre-Release Alpha Stage
-> 
+>
 > Please note that DTOS is currently in a pre-release alpha stage of development. This means the library is still under
 > active development, and its API is subject to change. We encourage developers to experiment with DTOS and provide
 > feedback, but we recommend against using it in production environments until a stable release is available.`
- 
+
 ## About
 
 The `dtos` library bridges the gap between complex domain models and their practical usage across network boundaries.
