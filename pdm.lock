@@ -5,7 +5,7 @@
 groups = ["default", "docs", "lint", "test"]
 strategy = ["cross_platform"]
 lock_version = "4.4.1"
-content_hash = "sha256:a5f38aadb6337c97f99f6cfa7530da3bd1b71a0bc5681d0fe6e0b718fe05d370"
+content_hash = "sha256:029f5235df941d3f4b5f56cdb5cd95e38c7f7c88ec99ca0d70e71a778aa8874a"
 
 [[package]]
 name = "alabaster"
@@ -995,7 +995,7 @@ files = [
 
 [[package]]
 name = "pre-commit"
-version = "3.6.2"
+version = "3.7.0"
 requires_python = ">=3.9"
 summary = "A framework for managing and maintaining multi-language pre-commit hooks."
 dependencies = [
@@ -1006,8 +1006,8 @@ dependencies = [
     "virtualenv>=20.10.0",
 ]
 files = [
-    {file = "pre_commit-3.6.2-py2.py3-none-any.whl", hash = "sha256:ba637c2d7a670c10daedc059f5c49b5bd0aadbccfcd7ec15592cf9665117532c"},
-    {file = "pre_commit-3.6.2.tar.gz", hash = "sha256:c3ef34f463045c88658c5b99f38c1e297abdcc0ff13f98d3370055fbbfabc67e"},
+    {file = "pre_commit-3.7.0-py2.py3-none-any.whl", hash = "sha256:5eae9e10c2b5ac51577c3452ec0a490455c45a0533f7960f993a0d01e59decab"},
+    {file = "pre_commit-3.7.0.tar.gz", hash = "sha256:e209d61b8acdcf742404408531f0c37d49d2c734fd7cff2d6076083d191cb060"},
 ]
 
 [[package]]
@@ -1053,16 +1053,16 @@ files = [
 
 [[package]]
 name = "pytest-cov"
-version = "4.1.0"
-requires_python = ">=3.7"
+version = "5.0.0"
+requires_python = ">=3.8"
 summary = "Pytest plugin for measuring coverage."
 dependencies = [
     "coverage[toml]>=5.2.1",
     "pytest>=4.6",
 ]
 files = [
-    {file = "pytest-cov-4.1.0.tar.gz", hash = "sha256:3904b13dfbfec47f003b8e77fd5b589cd11904a21ddf1ab38a64f204d6a10ef6"},
-    {file = "pytest_cov-4.1.0-py3-none-any.whl", hash = "sha256:6ba70b9e97e69fcc3fb45bfeab2d0a138fb65c4d0d6a41ef33983ad114be8c3a"},
+    {file = "pytest-cov-5.0.0.tar.gz", hash = "sha256:5837b58e9f6ebd335b0f8060eecce69b662415b16dc503883a02f45dfeb14857"},
+    {file = "pytest_cov-5.0.0-py3-none-any.whl", hash = "sha256:4f0764a1219df53214206bf1feea4633c3b558a2925c8b59f144f682861ce652"},
 ]
 
 [[package]]
@@ -1667,10 +1667,11 @@ files = [
 name = "type-lens"
 version = "0.1.0a0"
 requires_python = "<4.0,>=3.9"
-git = "https://github.com/jolt-org/type-lens.git"
-ref = "main"
-revision = "ee89c227b573079cc6a6f7820ebc1e08f6edea02"
 summary = "type-lens is a Python template project designed to simplify the setup of a new project."
+files = [
+    {file = "type_lens-0.1.0a0-py3-none-any.whl", hash = "sha256:f3a6ba25848cad8a9d0ce1ab066c2b357cec275415d7d92b65a354e23a973e65"},
+    {file = "type_lens-0.1.0a0.tar.gz", hash = "sha256:6685694470493f54ee9fb8a53e428db29791b3fb8d02a56527266d13781b906a"},
+]
 
 [[package]]
 name = "typing-extensions"
