@@ -87,10 +87,6 @@ match your application's requirements.
 - **Seamless Integration**: Designed to work effortlessly with popular Python data modeling and ORM tools, ``dtos``
 integrates into your existing workflow with minimal overhead.
 
-## How it Works
-
-Given a type annotation, `dtos` recursively traverse the type to find fields that it can decompose into a set of
-component types.
 ## Contributing
 
 All [Jolt][jolt-org] projects will always be a community-centered, available for contributions of any size.
