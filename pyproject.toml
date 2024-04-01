@@ -44,7 +44,7 @@ readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.9,<4.0"
 dependencies = [
-    "type-lens==0.1.0a0",
+    "type-lens==0.1.0a1",
     "msgspec>=0.18.6",
 ]
 
@@ -80,6 +80,7 @@ test = [
     "covdefaults",
     "pytest",
     "pytest-cov",
+    "pytest-mypy-plugins",
 ]
 
 [tool.pdm.scripts]
@@ -105,7 +106,7 @@ fail-under = 100
 
 [tool.pytest.ini_options]
 addopts = "--strict-markers --strict-config"
-testpaths = ["tests"]
+testpaths = ["tests", "typesafety"]
 xfail_strict = true
 
 [tool.mypy]

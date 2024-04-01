@@ -13,11 +13,59 @@ Model your domain at the edge.
 
 </div>
 
-> **Warning**: Pre-Release Alpha Stage
+> [!WARNING]
+> **Pre-Release Alpha Stage**
 >
 > Please note that DTOS is currently in a pre-release alpha stage of development. This means the library is still under
 > active development, and its API is subject to change. We encourage developers to experiment with DTOS and provide
 > feedback, but we recommend against using it in production environments until a stable release is available.`
+
+## Additional Goals
+
+In addition to the primary goals of the library, we are aiming to address the following issues with the Litestar DTO
+implementation:
+
+- Tagged union support: If the type annotation encounters a union field where the inner types are supported by the DTO,
+we should have a framework-specific way to elect a discrimination tag for each type. If there is no tag, the annotation
+would not be supported. E.g., for SQLAlchemy we'd be able to use the `polymorphic_on` value to specify the tag.
+- Transfer model naming: the names of the transfer models manifest in any json schema or openapi documentation. We want
+first class support for controlling these names and logical defaults.
+- Applying the DTO to the whole annotation: the current Litestar implementation looks for a DTO supported type within
+the annotation and binds itself to that. The goal of the DTO should be to produce an encodable object from an instance
+of the annotated type, and be able to construct an instance of the annotated type from input data. Types that are
+supported by the DTO should be able to be arbitrarily nested within the annotation, and the DTO should be able to
+traverse the annotation to find them, and deal with them in place.
+- Support multiple modelling libraries: In Litestar, a DTO is bound to a single modelling library via inheritance. We
+should be able to support multiple modelling libraries in the same DTO object by using a plugin system instead of
+inheritance.
+- Global configuration: Support binding config objects to model types so that the same model can share a config object
+across multiple DTOs. This would be especially useful for types that nest models within them. E.g., something like:
+
+```python
+from dataclasses import dataclass
+
+from dtos import DTOConfig, register_config
+
+@dataclass
+class Base:
+    secret_thing: str
+
+@dataclass
+class A(Base): ...
+
+# this config would apply to all models that inherit from Base, unless a more specific config is provided
+register_config(Base, DTOConfig(rename="camel", exclude={"secret_thing"}))
+```
+- First class support for generic types: The following doesn't work in Litestar:
+
+```python
+@dataclass
+class Foo(Generic[T]):
+    foo: T
+
+
+FooDTO = DataclassDTO[Foo[int]]
+```
 
 ## About
 
