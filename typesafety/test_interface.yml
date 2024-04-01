@@ -1,0 +1,98 @@
+- case: test_create_dto_from_model
+  main: |
+    import msgspec
+
+    from dtos import create_dto
+
+    class Model(msgspec.Struct):
+        a: int
+
+    reveal_type(create_dto(Model))
+  out: |
+    main:8: note: Revealed type is "dtos.dto.DTO[main.Model]"
+
+- case: test_create_dto_from_collection
+  main: |
+    import msgspec
+
+    from dtos import create_dto
+
+    class Model(msgspec.Struct):
+        a: int
+
+    reveal_type(create_dto(list[Model]))
+  out: |
+    main:8: note: Revealed type is "dtos.dto.DTO[builtins.list[main.Model]]"
+
+- case: test_create_dto_from_complex_collection_builtins
+  main: |
+    from typing import Union
+
+    from dtos import create_dto
+
+    reveal_type(create_dto(dict[str, Union[str, int]]))
+  out: |
+    main:5: note: Revealed type is "dtos.dto.DTO[builtins.dict[builtins.str, Union[builtins.str, builtins.int]]]"
+
+- case: test_create_dto_from_union_of_builtins
+  main: |
+    from typing import Union
+
+    from dtos import create_dto
+
+    reveal_type(create_dto(Union[int, str]))
+  out: |
+    main:4: note: Revealed type is "dtos.dto.DTO[Union[builtins.int, builtins.str]]"
+  expect_fail: True
+
+- case: test_create_dto_from_union_of_dataclasses
+  main: |
+    from dataclasses import dataclass
+    from typing import Union
+
+    from dtos import create_dto
+
+    @dataclass
+    class Model1: ...
+
+    @dataclass
+    class Model2: ...
+
+    reveal_type(create_dto(Union[Model1, Model2]))
+  out: |
+    main:12: note: Revealed type is "dtos.dto.DTO[Union[main.Model1, main.Model2]]"
+  expect_fail: True
+
+- case: test_create_dto_from_mapping_of_dataclasses
+  main: |
+    from dataclasses import dataclass
+    from typing import Union
+
+    from dtos import create_dto
+
+    @dataclass
+    class Model1: ...
+
+    @dataclass
+    class Model2: ...
+
+    reveal_type(create_dto(dict[str, Union[Model1, Model2]]))
+  out: |
+    main:12: note: Revealed type is "dtos.dto.DTO[builtins.dict[builtins.str, Union[main.Model1, main.Model2]]]"
+
+- case: test_create_dto_from_list_of_dataclass_union
+  main: |
+    from dataclasses import dataclass
+    from typing import Union
+
+    from dtos import create_dto
+
+    @dataclass
+    class Model1: ...
+
+    @dataclass
+    class Model2: ...
+
+    reveal_type(create_dto(list[Union[Model1, Model2]]))
+  out: |
+    main:12: note: Revealed type is "dtos.dto.DTO[builtins.list[Union[main.Model1, main.Model2]]]"
