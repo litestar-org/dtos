@@ -1,4 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
+from __future__ import annotations
+
 import os
 from datetime import datetime
 from functools import partial
@@ -6,19 +8,18 @@ from typing import TYPE_CHECKING, Any
 
 from dtos.__metadata__ import __project__, __version__
 
+if TYPE_CHECKING:
+    from sphinx.addnodes import document
+    from sphinx.application import Sphinx
+
 __all__ = (
     "delayed_setup",
     "setup",
     "update_html_context",
 )
 
-
-if TYPE_CHECKING:
-    from sphinx.addnodes import document
-    from sphinx.application import Sphinx
-
 # -- Environmental Data ------------------------------------------------------
-
+suppress_warnings = ["config.cache"]
 
 # -- Project information -----------------------------------------------------
 current_year = datetime.now().year
@@ -40,6 +41,8 @@ extensions = [
     "sphinx_click",
     "sphinx_toolbox.collapse",
     "sphinx_design",
+    "sphinx_togglebutton",
+    "sphinx_paramlinks",
 ]
 
 intersphinx_mapping = {
@@ -71,6 +74,10 @@ autodoc_type_aliases = {"FilterTypes": "FilterTypes"}
 
 autosectionlabel_prefix_document = True
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
+
+auto_pytabs_min_version = (3, 9)
+auto_pytabs_max_version = (3, 12)
+auto_pytabs_compat_mode = True
 
 # -- Style configuration -----------------------------------------------------
 html_theme = "litestar_sphinx_theme"
