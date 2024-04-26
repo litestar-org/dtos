@@ -39,7 +39,7 @@ jobs:
 
           token: ${{ secrets.DOCS_PREVIEW_DEPLOY_TOKEN }}
 
-          repository-name: jolt-org/dtos-docs-preview
+          repository-name: litestar-org/dtos-docs-preview
           clean: false
 
           target-folder: ${{ env.PR_NUMBER }}
@@ -54,7 +54,7 @@ jobs:
         with:
           script: |
             const issue_number = process.env.PR_NUMBER
-            const body = "Documentation preview will be available shortly at https://jolt-org.github.io/dtos-docs-preview/" + issue_number
+            const body = "Documentation preview will be available shortly at https://litestar-org.github.io/dtos-docs-preview/" + issue_number
 
             const opts = github.rest.issues.listComments.endpoint.merge({
               owner: context.repo.owner,

@@ -12,7 +12,7 @@ from sphinx.util.docutils import SphinxDirective
 if TYPE_CHECKING:
     from sphinx.application import Sphinx
 
-_GH_BASE_URL = "https://github.com/jolt-org/dtos"
+_GH_BASE_URL = "https://github.com/litestar-org/dtos"
 
 
 def _parse_gh_reference(raw: str, type_: Literal["issues", "pull"]) -> list[str]:
