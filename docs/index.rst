@@ -29,3 +29,21 @@ over their data's shape and structure during transfer. The library facilitates:
     match your application's requirements.
 - **Seamless Integration**: Designed to work effortlessly with popular Python data modeling and ORM tools, ``dtos``
     integrates into your existing workflow with minimal overhead.
+
+.. toctree::
+    :titlesonly:
+    :caption: Documentation
+    :hidden:
+
+    usage/index
+    reference/index
+
+.. toctree::
+    :titlesonly:
+    :caption: Development
+    :hidden:
+
+    changelog
+    contribution-guide
+    Available Issues <https://github.com/search?q=user%3Alitestar-org+state%3Aopen+label%3A%22good+first+issue%22+++no%3Aassignee+repo%3A%22advanced-alchemy%22&type=issues>
+    Code of Conduct <https://github.com/litestar-org/.github?tab=coc-ov-file#readme>
