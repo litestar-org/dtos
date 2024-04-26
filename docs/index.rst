@@ -8,6 +8,8 @@
     under active development, and its API is subject to change. We encourage developers to experiment with ``dtos`` and
     provide feedback, but we recommend against using it in production environments until a stable release is available.
 
+    Please see :doc:`releases` for more information on the stability policy.
+
 Introduction
 ============
 
@@ -45,5 +47,5 @@ over their data's shape and structure during transfer. The library facilitates:
 
     changelog
     contribution-guide
-    Available Issues <https://github.com/search?q=user%3Alitestar-org+state%3Aopen+label%3A%22good+first+issue%22+++no%3Aassignee+repo%3A%22advanced-alchemy%22&type=issues>
+    Available Issues <https://github.com/search?q=user%3Alitestar-org+state%3Aopen+label%3A%22good+first+issue%22+++no%3Aassignee+repo%3A%22dtos%22&type=issues>
     Code of Conduct <https://github.com/litestar-org/.github?tab=coc-ov-file#readme>
