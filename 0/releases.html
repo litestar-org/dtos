@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Litestar Framework</title>
-    <link rel="shortcut icon" href="_static/favicon.svg"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage" href="usage/index.html" />
+      <title>DTOs Releases - Litestar Framework</title>
+    <link rel="shortcut icon" href="_static/favicon.svg"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
   <script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
@@ -28,7 +28,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="dtos Project Overview"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="DTOs Releases"/>
 <meta name="twitter:card" content="summary"/>
 <meta property="og:image" content="_static/logo-light.svg"/>
   </head>
@@ -43,7 +43,7 @@
     <div class="sy-head-links" id="NavLinks">
       <nav class="sy-head-nav">
 
-<ul><li class="link"><a href="#">Home</a></li>
+<ul><li class="link"><a href="index.html">Home</a></li>
       <li class="link"><button type="button">
             <span>Community</span>
             <i class="i-lucid chevron"></i>
@@ -68,7 +68,7 @@
           <li><a href="https://litestar.dev/about/organization">
                 <span>Litestar Organization</span>
                 <small>Details about the Litestar organization</small>
-              </a></li><li><a href="releases.html">
+              </a></li><li><a href="#">
                 <span>Releases</span>
                 <small>Explore the release process, versioning, and deprecation policy for Litestar</small>
               </a></li></ul>
@@ -200,10 +200,14 @@
   <div class="localtoc">
     <h3>On this page</h3>
     <ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#purpose">Purpose</a><ul>
+<li><a class="reference internal" href="#version-numbering">Version Numbering</a><ul>
+<li><a class="reference internal" href="#pre-release-versions">Pre-release Versions</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#long-term-support-releases-lts">Long-term Support Releases (LTS)</a></li>
+<li><a class="reference internal" href="#deprecation-policy">Deprecation Policy</a></li>
+<li><a class="reference internal" href="#id1">Supported Versions</a></li>
+<li><a class="reference internal" href="#release-process">Release Process</a></li>
 </ul>
 
   </div><a class="js-repo-stats repo-stats flex items-center" href="https://github.com/litestar-org/dtos"
@@ -225,7 +229,7 @@
     </span>
   </span>
 </a><div class="edit-this-page">
-  <a href="https://github.com/litestar-org/dtos/blob/master/docs/index.rst">Edit this page</a>
+  <a href="https://github.com/litestar-org/dtos/blob/master/docs/releases.rst">Edit this page</a>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
     </div>
   </aside>
@@ -242,13 +246,13 @@
       
       
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="#"><span itemprop="name">dtos</span></a>
+        <a itemprop="item" href="index.html"><span itemprop="name">dtos</span></a>
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li>
       
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name"><code class="docutils literal notranslate"><span class="pre">dtos</span></code> Project Overview</strong>
+        <strong itemprop="name">DTOs Releases</strong>
         <meta itemprop="position" content="2" />
       </li>
       
@@ -265,49 +269,80 @@
     <div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="dtos-project-overview">
-<h1><code class="docutils literal notranslate"><span class="pre">dtos</span></code> Project Overview<a class="headerlink" href="#dtos-project-overview" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pre-Release Alpha Stage</p>
-<p>Please note that <code class="docutils literal notranslate"><span class="pre">dtos</span></code> is currently in a pre-release alpha stage of development. This means the library is still
-under active development, and its API is subject to change. We encourage developers to experiment with <code class="docutils literal notranslate"><span class="pre">dtos</span></code> and
-provide feedback, but we recommend against using it in production environments until a stable release is available.</p>
-<p>Please see <a class="reference internal" href="releases.html"><span class="doc">DTOs Releases</span></a> for more information on the stability policy.</p>
-</div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">dtos</span></code> library bridges the gap between complex domain models and their practical usage across network boundaries.
-It is designed for Python developers seeking to streamline the process of configuring different representations of
-domain models, such as dataclasses and SQLAlchemy models, for network edge parsing and validation. Whether you’re
-looking to accept a subset, superset, or a completely customized set of fields defined on your model at the network
-edge, <code class="docutils literal notranslate"><span class="pre">dtos</span></code> offers a flexible and powerful solution.</p>
-</section>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">dtos</span></code> is built with the vision of enhancing domain modeling at the network edge, offering developers unparalleled control
-over their data’s shape and structure during transfer. The library facilitates:</p>
+          <section id="dtos-releases">
+<h1>DTOs Releases<a class="headerlink" href="#dtos-releases" title="Link to this heading">¶</a></h1>
+<section id="version-numbering">
+<h2>Version Numbering<a class="headerlink" href="#version-numbering" title="Link to this heading">¶</a></h2>
+<p>This library follows the <a class="reference external" href="https://semver.org/">Semantic Versioning standard</a>, using the <code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;</span></code>
+schema:</p>
+<dl class="simple">
+<dt><strong>Major</strong></dt><dd><p>Backwards incompatible changes have been made</p>
+</dd>
+<dt><strong>Minor</strong></dt><dd><p>Functionality was added in a backwards compatible manner</p>
+</dd>
+<dt><strong>Patch</strong></dt><dd><p>Bugfixes were applied in a backwards compatible manner</p>
+</dd>
+</dl>
+<section id="pre-release-versions">
+<h3>Pre-release Versions<a class="headerlink" href="#pre-release-versions" title="Link to this heading">¶</a></h3>
+<p>Before a new major release, we will make <code class="docutils literal notranslate"><span class="pre">alpha</span></code>, <code class="docutils literal notranslate"><span class="pre">beta</span></code>, and release candidate (<code class="docutils literal notranslate"><span class="pre">rc</span></code>) releases, numbered as
+<code class="docutils literal notranslate"><span class="pre">&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;&lt;release_type&gt;&lt;number&gt;</span></code>. For example, <code class="docutils literal notranslate"><span class="pre">2.0.0alpha1</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0.0beta1</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0.0rc1</span></code>.</p>
 <ul class="simple">
 <li><dl class="simple">
-<dt><strong>Customizable Data Representations</strong>: Tailor your data to meet the exact needs of your network interactions, enabling</dt><dd><p>a more efficient and precise data exchange.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">alpha</span></code></dt><dd><p>Early developer preview. Features may not be complete and breaking changes can occur.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><strong>Edge Parsing and Validation</strong>: Ensure your data integrity by defining explicit parsing and validation rules that</dt><dd><p>match your application’s requirements.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">beta</span></code></dt><dd><p>More stable preview release. Feature complete, no major breaking changes expected.</p>
 </dd>
 </dl>
 </li>
 <li><dl class="simple">
-<dt><strong>Seamless Integration</strong>: Designed to work effortlessly with popular Python data modeling and ORM tools, <code class="docutils literal notranslate"><span class="pre">dtos</span></code></dt><dd><p>integrates into your existing workflow with minimal overhead.</p>
+<dt><code class="docutils literal notranslate"><span class="pre">rc</span></code></dt><dd><p>Release candidate. Feature freeze, only bugfixes until final release.
+Suitable for testing migration to the upcoming major release.</p>
 </dd>
 </dl>
 </li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+</section>
+</section>
+<section id="long-term-support-releases-lts">
+<h2>Long-term Support Releases (LTS)<a class="headerlink" href="#long-term-support-releases-lts" title="Link to this heading">¶</a></h2>
+<p>Major releases are designated as LTS releases for the life of that major release series.
+These releases will receive bugfixes for a guaranteed period of time as defined in
+<a class="reference external" href="#supported-versions">Supported Versions</a>.</p>
+</section>
+<section id="deprecation-policy">
+<h2>Deprecation Policy<a class="headerlink" href="#deprecation-policy" title="Link to this heading">¶</a></h2>
+<p>When a feature is going to be removed, a deprecation warning will be added in a <strong>minor</strong> release.
+The feature will continue to work for all releases in that major series, and will be removed in the next major release.</p>
+<p>For example, if a deprecation warning is added in <code class="docutils literal notranslate"><span class="pre">1.1</span></code>, the feature will work throughout all <code class="docutils literal notranslate"><span class="pre">1.x</span></code> releases,
+and be removed in <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p>
+</section>
+<section id="id1">
+<h2>Supported Versions<a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
+<p>At any time, the Litestar organization will actively support:</p>
+<ul class="simple">
+<li><p>The current major release series</p></li>
+<li><p>The previous major release series</p></li>
+<li><p>Any other designated LTS releases (Special cases)</p></li>
+</ul>
+<p>For example, if the current release is <code class="docutils literal notranslate"><span class="pre">2.0</span></code>, we will actively support <code class="docutils literal notranslate"><span class="pre">2.x</span></code> and <code class="docutils literal notranslate"><span class="pre">1.x</span></code>.
+When <code class="docutils literal notranslate"><span class="pre">3.0</span></code> is released, we will drop support for <code class="docutils literal notranslate"><span class="pre">1.x</span></code>.</p>
+<p>Bugfixes will be applied to the current major release, and selectively backported to older
+supported versions based on severity and feasibility.</p>
+</section>
+<section id="release-process">
+<h2>Release Process<a class="headerlink" href="#release-process" title="Link to this heading">¶</a></h2>
+<p>Each major release cycle consists of a few phases:</p>
+<ol class="arabic simple">
+<li><p><strong>Planning</strong>: Define roadmap, spec out major features. Work should begin on implementation.</p></li>
+<li><p><strong>Development</strong>: Active development on planned features. Ends with an alpha release and branch of <code class="docutils literal notranslate"><span class="pre">A.B.x</span></code>
+branch from <cite>main</cite>.</p></li>
+<li><p><strong>Bugfixes</strong>: Only bugfixes, no new features. Progressively release beta, release candidates.
+Feature freeze at RC. Become more selective with backports to avoid regressions.</p></li>
+</ol>
 </section>
 </section>
 
@@ -321,15 +356,7 @@ over their data’s shape and structure during transfer. The library facilitates
         
         <div class="navigation flex print:hidden">
   
-  <div class="navigation-next">
-    <a href="usage/index.html">
-      <div class="page-info">
-        <span>Next</span>
-        <div class="title">Usage</div>
-      </div>
-      <i class="i-lucid chevron"></i>
-    </a>
-  </div>
+  
 </div>
         
       </div>

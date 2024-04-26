@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Litestar Framework</title>
-    <link rel="shortcut icon" href="_static/favicon.svg"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Usage" href="usage/index.html" />
+      <title>Changelog - Litestar Framework</title>
+    <link rel="shortcut icon" href="_static/favicon.svg"/><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Contribution guide" href="contribution-guide.html" /><link rel="prev" title="API Reference" href="reference/index.html" />
 
   <script>
     function setColorMode(t){let e=document.documentElement;e.setAttribute("data-color-mode",t);let a=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,s=t;"auto"===t&&(s=a?"dark":"light"),"light"===s?(e.classList.remove("dark"),e.classList.add("light")):(e.classList.remove("light"),e.classList.add("dark"))}
@@ -28,7 +28,7 @@
   --sy-f-heading: "Inter", var(--sy-f-sys), var(--sy-f-cjk), sans-serif;
 }
 </style>
-    <meta property="og:type" content="website"/><meta property="og:title" content="dtos Project Overview"/>
+    <meta property="og:type" content="website"/><meta property="og:title" content="Changelog"/>
 <meta name="twitter:card" content="summary"/>
 <meta property="og:image" content="_static/logo-light.svg"/>
   </head>
@@ -43,7 +43,7 @@
     <div class="sy-head-links" id="NavLinks">
       <nav class="sy-head-nav">
 
-<ul><li class="link"><a href="#">Home</a></li>
+<ul><li class="link"><a href="index.html">Home</a></li>
       <li class="link"><button type="button">
             <span>Community</span>
             <i class="i-lucid chevron"></i>
@@ -78,7 +78,7 @@
             <i class="i-lucid chevron"></i>
           </button>
         <ul>
-          <li><a href="changelog.html">
+          <li><a href="#">
                 <span>1.x Changelog</span>
                 <small>All changes in the 1.x series</small>
               </a></li></ul>
@@ -179,8 +179,8 @@
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contribution-guide.html">Contribution guide</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/search?q=user%3Alitestar-org+state%3Aopen+label%3A%22good+first+issue%22+++no%3Aassignee+repo%3A%22dtos%22&amp;type=issues">Available Issues</a></li>
 <li class="toctree-l1"><a class="reference external" href="https://github.com/litestar-org/.github?tab=coc-ov-file#readme">Code of Conduct</a></li>
@@ -200,8 +200,10 @@
   <div class="localtoc">
     <h3>On this page</h3>
     <ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#purpose">Purpose</a><ul>
+<li><a class="reference internal" href="#id1">Release [v0.1.0] - 2024-04-26</a><ul>
+<li><a class="reference internal" href="#documentation">Documentation</a></li>
+<li><a class="reference internal" href="#miscellaneous-tasks">Miscellaneous Tasks</a></li>
+<li><a class="reference internal" href="#ci">Ci</a></li>
 </ul>
 </li>
 </ul>
@@ -225,7 +227,7 @@
     </span>
   </span>
 </a><div class="edit-this-page">
-  <a href="https://github.com/litestar-org/dtos/blob/master/docs/index.rst">Edit this page</a>
+  <a href="https://github.com/litestar-org/dtos/blob/master/docs/changelog.rst">Edit this page</a>
 </div><div id="ethical-ad-placement" data-ea-publisher="readthedocs"></div>
     </div>
   </aside>
@@ -242,13 +244,13 @@
       
       
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="#"><span itemprop="name">dtos</span></a>
+        <a itemprop="item" href="index.html"><span itemprop="name">dtos</span></a>
         <span>/</span>
         <meta itemprop="position" content="1" />
       </li>
       
       <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <strong itemprop="name"><code class="docutils literal notranslate"><span class="pre">dtos</span></code> Project Overview</strong>
+        <strong itemprop="name">Changelog</strong>
         <meta itemprop="position" content="2" />
       </li>
       
@@ -265,49 +267,36 @@
     <div class="flex flex-col break-words justify-between">
       <div class="min-w-0 max-w-6xl px-6 pb-6 pt-8 xl:px-12">
         <article class="yue" role="main">
-          <section id="dtos-project-overview">
-<h1><code class="docutils literal notranslate"><span class="pre">dtos</span></code> Project Overview<a class="headerlink" href="#dtos-project-overview" title="Link to this heading">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Pre-Release Alpha Stage</p>
-<p>Please note that <code class="docutils literal notranslate"><span class="pre">dtos</span></code> is currently in a pre-release alpha stage of development. This means the library is still
-under active development, and its API is subject to change. We encourage developers to experiment with <code class="docutils literal notranslate"><span class="pre">dtos</span></code> and
-provide feedback, but we recommend against using it in production environments until a stable release is available.</p>
-<p>Please see <a class="reference internal" href="releases.html"><span class="doc">DTOs Releases</span></a> for more information on the stability policy.</p>
-</div>
-<section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">dtos</span></code> library bridges the gap between complex domain models and their practical usage across network boundaries.
-It is designed for Python developers seeking to streamline the process of configuring different representations of
-domain models, such as dataclasses and SQLAlchemy models, for network edge parsing and validation. Whether you’re
-looking to accept a subset, superset, or a completely customized set of fields defined on your model at the network
-edge, <code class="docutils literal notranslate"><span class="pre">dtos</span></code> offers a flexible and powerful solution.</p>
-</section>
-<section id="purpose">
-<h2>Purpose<a class="headerlink" href="#purpose" title="Link to this heading">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">dtos</span></code> is built with the vision of enhancing domain modeling at the network edge, offering developers unparalleled control
-over their data’s shape and structure during transfer. The library facilitates:</p>
+          <section id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<p>All commits to this project will be documented in this file.</p>
+<section id="id1">
+<h2><a class="reference external" href="https://github.com/litestar-org/dtos/releases/tag/v0.1.0">Release [v0.1.0] - 2024-04-26</a><a class="headerlink" href="#id1" title="Link to this heading">¶</a></h2>
 <ul class="simple">
-<li><dl class="simple">
-<dt><strong>Customizable Data Representations</strong>: Tailor your data to meet the exact needs of your network interactions, enabling</dt><dd><p>a more efficient and precise data exchange.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Edge Parsing and Validation</strong>: Ensure your data integrity by defining explicit parsing and validation rules that</dt><dd><p>match your application’s requirements.</p>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt><strong>Seamless Integration</strong>: Designed to work effortlessly with popular Python data modeling and ORM tools, <code class="docutils literal notranslate"><span class="pre">dtos</span></code></dt><dd><p>integrates into your existing workflow with minimal overhead.</p>
-</dd>
-</dl>
-</li>
+<li><p><a class="reference external" href="https://github.com/litestar-org/dtos/commits/v0.1.0">See All commits in v0.1.0</a></p></li>
 </ul>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/e34f8f6724d21cfd02e54380e47a14d5abb9f0ca">e34f8f6</a>)  - Move to litestar (Jacob Coffee)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/d01974125292d1afbdd36c07728f22bbf210a31f">d019741</a>)  - Add pages (Jacob Coffee)</p></li>
+</ul>
+</section>
+<section id="miscellaneous-tasks">
+<h3>Miscellaneous Tasks<a class="headerlink" href="#miscellaneous-tasks" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/88e20261d8ab08d224072fc01fe3b4a5f077af49">88e2026</a>)  - Fix linting errors (Peter Schutt)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/90f21ecc9b90f79435ca4f43edd41dc3762ba187">90f21ec</a>)  - Updated type-lens dep to pre-release (Peter Schutt)</p></li>
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/6e16eeb877644a80c6b2db67868dc5202faadc2b">6e16eeb</a>)  - Use github readme admonition (Jacob Coffee)</p></li>
+</ul>
+</section>
+<section id="ci">
+<h3>Ci<a class="headerlink" href="#ci" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>(<a class="reference external" href="https://github.com/litestar-org/dtos/commit/6f03cf15893e39a06637f85d49173031cb51d8a8">6f03cf1</a>)  - Update py versions (Peter Schutt)</p></li>
+</ul>
+<p>DTOs Changelog</p>
+</section>
 </section>
 </section>
 
@@ -320,12 +309,22 @@ over their data’s shape and structure during transfer. The library facilitates
 </button>
         
         <div class="navigation flex print:hidden">
-  
+  <div class="navigation-prev">
+    <a href="reference/index.html">
+      <i class="i-lucid chevron"></i>
+      <div class="page-info">
+        <span>Previous</span>
+        
+        <div class="title">API Reference</div>
+        
+      </div>
+    </a>
+  </div>
   <div class="navigation-next">
-    <a href="usage/index.html">
+    <a href="contribution-guide.html">
       <div class="page-info">
         <span>Next</span>
-        <div class="title">Usage</div>
+        <div class="title">Contribution guide</div>
       </div>
       <i class="i-lucid chevron"></i>
     </a>
