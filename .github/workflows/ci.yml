@@ -83,7 +83,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Run slotscheck
-        run: uv run slotscheck litestar_htmx
+        run: uv run slotscheck dtos
 
   test-linux:
     runs-on: ubuntu-latest
