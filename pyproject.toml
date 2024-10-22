@@ -1,6 +1,7 @@
 [project]
 authors = [
     { name = "Peter Schutt", email = "peter.github@proton.me" },
+    { name = "Cody Fincher", email = "cody@litestar.dev" },
 ]
 maintainers = [
     { name = "Litestar Developers", email = "hello@litestar.dev" },
@@ -39,9 +40,9 @@ version = "0.1.0"
 description = "Domain modelling at the edge."
 readme = "README.md"
 license = { text = "MIT" }
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.9,<3.13"
 dependencies = [
-    "type-lens==0.1.0a0",
+    "type-lens>=0.1.0a0",
     "msgspec>=0.18.6",
 ]
 
@@ -54,8 +55,10 @@ homepage = "https://litestar.dev/"
 repository = "https://github.com/litestar-org/dtos"
 documentation = "https://docs.dtos.litestar.dev/"
 
-[tool.pdm.dev-dependencies]
-docs = [
+[tool.uv]
+dev-dependencies = [
+    "anyio",
+    # - Documentation
     "auto-pytabs[sphinx]>=0.4.0",
     "sphinx-autobuild>=2021.3.14",
     "sphinx-click>=4.4.0",
@@ -68,43 +71,60 @@ docs = [
     "sphinx-togglebutton>=0.3.2",
     #    "litestar-sphinx-theme @ {root:uri}/../litestar-sphinx-theme", # only needed when working on the theme
     "litestar-sphinx-theme @ git+https://github.com/litestar-org/litestar-sphinx-theme.git@v3",
-]
-lint = [
+    # - Linting
     "codecov-cli",
     "mypy",
     "pre-commit",
     "pyright",
     "ruff",
-]
-test = [
+    "slotscheck",
+    # - Testing
     "covdefaults",
     "pytest",
     "pytest-cov",
+    "pytest-sugar",
 ]
-
-[tool.pdm.scripts]
-ci = { composite = ["lint", "test"] }
-docs-serve = "sphinx-autobuild docs docs/_build/ -j auto --watch dtos --watch docs --watch tests --watch CONTRIBUTING.rst --port 8002"
-lint = "pre-commit run --all-files"
-test = "pytest"
 
 [build-system]
 build-backend = "hatchling.build"
 requires = ["hatchling"]
 
 [tool.codespell]
-skip = 'pdm.lock'
+skip = 'uv.lock'
 
 [tool.coverage.run]
+branch = true
+concurrency = ["multiprocessing"]
+disable_warnings = ["no-data-collected", "module-not-measured", "module-not-imported"]
 omit = ["*/tests/*"]
 plugins = ["covdefaults"]
 source = ["dtos"]
 
 [tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    'class .*\bProtocol\):',
+    '@(abc\.)?abstractmethod',
+]
 fail-under = 100
 
 [tool.pytest.ini_options]
-addopts = "--strict-markers --strict-config"
+addopts = "-ra -q --strict-markers --strict-config"
 testpaths = ["tests"]
 xfail_strict = true
 
